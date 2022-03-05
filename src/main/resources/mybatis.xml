@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <package name="com.atguigu.crud.bean"/>
+    </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--设置分页参数合理化，当查询页码小于0时，就查询第0页的数据，大于总页码时，就查询最后一页的数据-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+    <mappers>
+        <package name="com.atguigu.crud.dao"/>
+    </mappers>
+</configuration>
